@@ -1,0 +1,60 @@
+<div class="section-thin section-hero overview-header" tabindex="0">
+    <div class="row no-gutters">
+        <div class="col-md-5 col-sm-12 col-12 info-header">
+            <h1>Similar Genes</h1>
+        </div>
+    </div>
+</div>
+
+<div class="nomlist-list center-justified-last linkstable">
+    <!-- <table>
+        <tr *ngFor="let node of selectedGeneData.nodes" class="pathbox">
+            <td>
+                <span class="genes">
+                <span (click)="viewGene(node.ensembl_gene_id)">{{node.hgnc_symbol}}</span>
+            </span>
+            </td>
+        </tr>
+    </table> -->
+    <p-table #gl [columns]="cols" [value]="genesInfo" selectionMode="single"
+        [(selection)]="selectedInfo"
+        [paginator]="true"
+        [rows]="14"
+        [totalRecords]="totalRecords"
+        [loading]="loading"
+        (sortFunction)="customSort($event)"
+        (onRowSelect)="onRowSelect($event)"
+        (onRowUnselect)="onRowUnselect($event)"
+        [customSort]="true">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+            <th *ngFor="let col of cols; let i = index;" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+            <td>
+               {{rowData[columns[0].field]}}
+            </td>
+            <td>
+                {{rowData[columns[1].field]?'YES':'NO'}}
+            </td>
+            <td>
+                {{rowData[columns[2].field]}}
+            </td>
+            <td>
+                {{rowData[columns[3].field]}}
+            </td>
+            <td>
+                {{druggability(rowData[columns[4].field])}}
+            </td>
+            <td>
+                {{druggabilitypc(rowData[columns[5].field])}}
+            </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

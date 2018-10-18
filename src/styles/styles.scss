@@ -1,0 +1,506 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+
+
+/* This file is for setting global styles  */
+
+// 1. Vendor files
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/utilities/flex";
+@import "~dc/style/dc.scss";
+@import "~primeicons/primeicons.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~primeng/resources/themes/omega/theme.css";
+@import "~primeng/resources/primeng.min.css";
+// @import "~lato-font/css/lato-font.min.css";
+// 2. Helpers (variables, mixins, functions, ...)
+@import "../assets/css/helpers/variables";
+@import "../assets/css/helpers/mixins";
+// 3. Base stuff (common settings for all components and pages)
+@import "../assets/css/common/viewport-workaround";
+@import "../assets/css/common/global";
+@import "../assets/css/common/components";
+// 4. Sanitizer library to fix things
+@import "~sanitize.css";
+
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Let the OS add the default outline to tabbable elements
+:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+// 5. Custom Global Styles
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+html, body{
+    @include lato-font('normal');
+
+    min-width: 380px;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1em;
+    margin-bottom: 100px;
+}
+
+ng-scrollbar {
+    .-vertical {
+        top: 14px;
+        right: 10px;
+        bottom: 14px;
+        background-color: rgba(0,0,0,.1);
+    }
+
+    .ng-scrollbar-view {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    @include lato-font('normal');
+
+    line-height: normal;
+    text-align: left;
+    font-size: 20px;
+    color: #24334F;
+}
+
+span {
+    @include lato-font('normal');
+    @include respond-to('ex-small') {
+        font-size: 18px;
+    }
+
+    line-height: normal;
+    font-size: 20px;
+    text-align: center;
+    color: #3C4A63;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+p-checkbox {
+    .ui-state-focus.ui-state-active {
+        background: #2F8E94 !important;
+        border: 2px solid #73C8CC !important;
+    }
+}
+
+p-panel {
+    .pi-minus:before {
+        content: url("/assets/icon/minus_icon.png") !important;
+    }
+
+    .pi-plus:before {
+        content: url("/assets/icon/plus_icon.png") !important;
+    }
+
+    .ui-panel-titlebar {
+        line-height: 45px !important;
+    }
+}
+
+p-dialog {
+    .ui-dialog {
+        width: 80% !important;
+
+        @include respond-to('ex-small') {
+            left: 10% !important;
+        }
+        @include respond-to('small') {
+            left: 10% !important;
+        }
+
+        // max-width: 80%;
+        top: 109px;
+        max-height: 80%;
+        overflow: auto;
+    }
+
+    .ui-dialog-titlebar {
+        @include lato-font('bold');
+
+        padding-top: 59px !important;;
+        text-align-last: center;
+        background: white;
+        line-height: normal;
+        font-size: 24px !important;
+        color: #1A1C29;
+        text-align: center;
+        padding-top: 10% ;
+
+        .pi-times:before {
+            color: #5BB0B5;
+            content: url("/assets/icon/close_modal_icon.png");
+        }
+    }
+
+    .ui-dialog-title {
+        @include lato-font('bold');
+        font-size: 24px !important;
+        color: #1A1C29;
+    }
+
+    .ui-dialog-titlebar-icon {
+        padding: .525em !important;
+
+        > span {
+            width: 31px;
+            height: 31px;
+        }
+    }
+
+    .ui-dialog-content {
+        @include lato-font('normal');
+
+        padding-bottom: 45px !important;
+        padding-left: 20% !important;
+        padding-right: 20% !important;
+        line-height: normal;
+        font-size: 18px;
+        text-align: left;
+        text-align-last: left;
+        color: #000000;
+        height: 100% ;
+        padding-bottom: 10%;
+
+        .content-row {
+            margin-bottom: 20px;
+
+            .content-vspacing {
+                margin-bottom: 40px;
+            }
+        }
+
+        .header-span {
+            font-weight: bold;
+        }
+    }
+
+    .fa-close:before {
+        color: #5BB0B5;
+    }
+
+    a {
+        position: absolute;
+        left: 1%;
+        top: 10%;
+    }
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.synapse-button {
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.black-paragraph {
+    color: black;
+}
+
+.italic-paragraph {
+    @include lato-font('normal', italic);
+
+    line-height: normal;
+    font-size: 18px;
+    color: #8D919E;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.no-padding {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.center-justified-last {
+    text-align: justify;
+    text-align-last: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.vertical-align {
+    align-items: center;
+}
+
+.small-padding-top {
+    padding-top: 2%;
+}
+
+.light-blue {
+    background: #2AB7E6;
+}
+
+.row-shadow {
+    -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.section {
+    @include lato-font('normal');
+
+    @include respond-to('ex-small') {
+        padding-top: 2em;
+        padding-left: 9%;
+        padding-bottom: 2em;
+        padding-right: 9%;
+        color: #000000;
+        //background-color: #ffffff;
+    }
+    @include respond-to('small') {
+        padding-top: 2em;
+        padding-left: 9%;
+        padding-bottom: 2em;
+        padding-right: 9%;
+        color: #000000;
+        //background-color: #ffffff;
+    }
+    @include respond-to('medium') {
+        padding-top: 2em;
+        padding-left: 15%;
+        padding-bottom: 2em;
+        padding-right: 15%;
+        color: #000000;
+        //background-color: #ffffff;
+    }
+    @include respond-to('large') {
+        padding-top: 2em;
+        padding-left: 17%;
+        padding-bottom: 2em;
+        padding-right: 17%;
+        color: #000000;
+        //background-color: #ffffff;
+    }
+    @include respond-to('ex-large') {
+        padding-top: 2em;
+        padding-left: 22%;
+        padding-bottom: 2em;
+        padding-right: 22%;
+        color: #000000;
+       //background-color: #ffffff;
+    }
+}
+
+.section-thin {
+    @include lato-font('normal');
+
+    @include respond-to('ex-small') {
+        padding-top: 2em;
+        padding-left: 3.5%;
+        padding-bottom: 2em;
+        padding-right: 3.5%;
+        color: #000000;
+        background-color: #ffffff;
+    }
+    @include respond-to('small') {
+        padding-top: 2em;
+        padding-left: 4.0%;
+        padding-bottom: 2em;
+        padding-right: 4.0%;
+        color: #000000;
+        background-color: #ffffff;
+    }
+    @include respond-to('medium') {
+        padding-top: 2em;
+        padding-left: 4.5%;
+        padding-bottom: 2em;
+        padding-right: 4.5%;
+        color: #000000;
+        background-color: #ffffff;
+    }
+    @include respond-to('large') {
+        padding-top: 2em;
+        padding-left: 5.5%;
+        padding-bottom: 2em;
+        padding-right: 5.5%;
+        color: #000000;
+        background-color: #ffffff;
+    }
+    @include respond-to('ex-large') {
+        padding-top: 2em;
+        padding-left: 7.5%;
+        padding-bottom: 2em;
+        padding-right: 7.5%;
+        color: #000000;
+        background-color: #ffffff;
+    }
+}
+
+.section-hero {
+    background-image: url('/assets/img/Background.svg');
+    background-size: cover !important;
+}
+
+.beta-underline {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.pathbox {
+    width: 100%;
+    margin-bottom: 10px;
+
+    .genes {
+        span {
+            @include lato-font('bold');
+
+            color: #5BB0B5;
+            text-decoration: underline;
+            cursor: pointer;
+            line-height: normal;
+            font-size: 18px;
+            width: 100%;
+        }
+    }
+
+    span {
+        margin-right: 5px;
+    }
+}
+
+.linkstable{
+    table {
+        border-collapse: collapse;
+    }
+
+    table{
+        width: 100%;
+
+        tr {
+            @include lato-font('normal');
+
+            line-height: 40px;
+            color: #1A1C29;
+            height: 40px;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafb;
+        }
+
+        tr:nth-child(odd) {
+            background: #FFF
+        }
+    }
+}
+
+[hidden] { display: none !important; }
+
+.green-text {
+    color: #78B87A;
+}
+
+.red-text {
+    color: #E06672;
+}
+
+.placeholder-img {
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    display: block;
+    width: 100%;
+}
+
+.placeholder-text {
+    @include lato-font('normal', italic);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: normal;
+    font-size: 18px;
+    text-align: center;
+    color: #9DA3B3;
+}
+
+.icon-spacing {
+    margin-right: 5px;
+}
+
+.info-icon {
+    float: left;
+    margin-right: 8px;
+}
+
+.download-img {
+    cursor: pointer;
+}
+
+.loading-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    pointer-events: none;
+}
+
+.pi-check:before {
+    content: url("/assets/icon/checked_icon.png") !important;
+}

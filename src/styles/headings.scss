@@ -1,0 +1,86 @@
+@import "../assets/css/helpers/variables";
+@import "../assets/css/helpers/mixins";
+
+h1 {
+    @include lato-font('medium');
+
+    line-height: normal;
+    font-size: 40px;
+    text-align: left;
+    color: #5171C0;
+}
+
+h2 {
+    @include lato-font('bold');
+
+    text-align: left;
+    line-height: normal;
+    color: #1A1C29;
+    font-size: 24px;
+}
+
+h3 {
+    @include lato-font('bold');
+
+    text-align: left;
+    line-height: normal;
+    color: #1A1C29;
+    font-size: 18px;
+}
+
+.normal-heading {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.italic-heading {
+    font-weight: normal;
+    font-size: 18px;
+    font-style: italic;
+    color: #8D919E;
+}
+
+.link-heading {
+    color: #5BB0B5;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.modal-heading {
+    @include lato-font('bold');
+
+    line-height: normal;
+    font-size: 24px;
+    text-align: center;
+
+    color: #1A1C29;
+}
+
+.inner-section-divider {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.inner-section-divider:after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #FFFFFF;
+    margin-bottom: -2px;
+
+    @include respond-to('ex-small') {
+        max-width: 3.5%;
+    }
+    @include respond-to('small') {
+        max-width: 4.0%;
+    }
+    @include respond-to('medium') {
+        max-width: 4.5%;
+    }
+    @include respond-to('large') {
+        max-width: 5.5%;
+    }
+    @include respond-to('ex-large') {
+        max-width: 7.5%;
+    }
+}

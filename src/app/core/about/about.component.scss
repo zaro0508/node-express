@@ -1,0 +1,38 @@
+@import "../../../assets/css/helpers/variables";
+@import "../../../assets/css/helpers/mixins";
+
+.info-header {
+    padding-right: 5% !important;
+}
+
+.overview-header {
+    .row {
+        align-items: center;
+    }
+}
+
+.about-desc {
+    margin-bottom: 2%;
+
+    .about-paragraph {
+        margin-bottom: 40px;
+    }
+}
+
+.about-anchor {
+    color: #5BB0B5;
+}
+
+.about-link-span {
+    color: #5BB0B5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.contact-us {
+    @include lato-font('normal');
+
+    color: #5BB0B5;
+    line-height: normal;
+    font-size: 18px;
+}
