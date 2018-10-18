@@ -1,0 +1,31 @@
+@import "../../../assets/css/helpers/variables";
+@import "../../../assets/css/helpers/mixins";
+
+.info-header {
+    padding-right: 5% !important;
+}
+
+.overview-header {
+    .row {
+        align-items: center;
+    }
+}
+
+.download-terms-desc {
+    margin-bottom: 2%;
+
+    .about-paragraph {
+        margin-bottom: 40px;
+    }
+}
+
+.h2-anchor {
+    @include lato-font('bold');
+
+    text-align: left;
+    line-height: normal;
+    color: #5BB0B5;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 24px;
+}

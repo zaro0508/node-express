@@ -1,0 +1,379 @@
+@import "../../../../assets/css/helpers/variables";
+@import "../../../../assets/css/helpers/mixins";
+
+.rna-seq-sel {
+    background: rgba(245, 245, 245, 0.5);
+
+    .fa-info-circle:before {
+        color: #9DA3B3;
+    }
+}
+
+.rna-seq-me {
+    .fa-info-circle:before {
+        color: #9DA3B3;
+    }
+}
+
+.rna-seq-bplot {
+    @include respond-to('medium') {
+        border-right-color: rgba(245, 245, 245, 0.5);
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-right: 15px;
+    }
+    @include respond-to('large') {
+        border-right-color: rgba(245, 245, 245, 0.5);
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-right: 15px;
+    }
+    @include respond-to('ex-large') {
+        border-right-color: rgba(245, 245, 245, 0.5);
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-right: 15px;
+    }
+
+    .fa-info-circle:before {
+        color: #9DA3B3;
+    }
+
+    select {
+        @include lato-font('normal');
+
+        width: 100%;
+        line-height: normal;
+        font-size: 18px;
+        color: #1A1C29;
+        padding-left: 3%;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    // For older browsers like IE 10, 11
+    select::-ms-expand{
+        display: none;
+    }
+
+    p-multiselect {
+        width: 100%;
+
+        .ui-multiselect,
+        .ui-multiselect-panel
+        {
+            width: 100%;
+            color: black;
+        }
+
+        .ui-multiselect-items {
+            vertical-align: middle;
+
+            >:hover {
+                background: rgba(91, 176, 181, 0.25) !important;
+                background-color: rgba(91, 176, 181, 0.25) !important;
+            }
+        }
+
+        .ui-multiselect:not(.ui-state-disabled):hover {
+            background: white;
+        }
+
+        .ui-multiselect-item:not(.ui-state-highlight):hover {
+            background-color: rgba(91, 176, 181, 0.25);
+        }
+
+        .ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+            background-color: rgba(91, 176, 181, 0.25);
+        }
+
+        .ui-multiselect-label-container {
+            padding-left: 10px;
+            @include lato-font('normal');
+            font-size: 18px;
+
+            @include respond-to('ex-small') {
+                font-size: 16px;
+            }
+            @include respond-to('small') {
+                font-size: 16px;
+            }
+            @include respond-to('medium') {
+                font-size: 18px;
+            }
+            @include respond-to('large') {
+                font-size: 18px;
+            }
+            @include respond-to('ex-large') {
+                font-size: 18px;
+            }
+
+            color: #1A1C29;
+            height: 52px;
+            line-height: 52px;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 4px #C7C5C5;
+        }
+
+        .ui-chkbox {
+            margin-right: 1.125em;
+            height: 32px;
+            width: 32px;
+        }
+
+        .ui-chkbox-box {
+            height: 32px;
+            width: 32px;
+            vertical-align: middle;
+            border-radius: 6px;
+
+            .ui-chkbox-icon {
+                color: white;
+            }
+
+            span {
+                position: relative;
+                width: 32px;
+                height: 32px;
+                vertical-align: middle;
+            }
+        }
+
+        ul {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        li {
+            width: 100%;
+            line-height: 52px;
+            @include lato-font('normal');
+
+            @include respond-to('ex-small') {
+                font-size: 14px;
+            }
+            @include respond-to('small') {
+                font-size: 14px;
+            }
+            @include respond-to('medium') {
+                font-size: 16px;
+            }
+            @include respond-to('large') {
+                font-size: 16px;
+            }
+            @include respond-to('ex-large') {
+                font-size: 16px;
+            }
+
+            color: #1A1C29;
+            padding-left: 30px !important;
+            border-bottom: 1px solid #EDEDED !important;
+            height: 51px;
+            vertical-align: middle;
+
+            .ui-state-default {
+                background: #FFFFFF;
+                border: 2px solid #C7C5C5;
+                box-sizing: border-box;
+                box-shadow: inset 0px 0px 4px rgba(199, 197, 197, 0.5);
+                border-radius: 6px;
+                border-color: #c0c0c0;
+                background-color: white;
+            }
+
+            .ui-state-active {
+                background: #2F8E94;
+                border: 2px solid #73C8CC;
+                box-sizing: border-box;
+                border-radius: 6px;
+                color: white;
+            }
+
+            label {
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        .ui-state-highlight {
+            background: white !important;
+            background-color: white !important;
+            color: #1A1C29;
+        }
+
+        .fa-check:before {
+            z-index: 1000;
+            position: absolute;
+            left: 21.5%;
+            top: 15%;
+            margin: 0 auto;
+            -moz-transform: scale(1.2,1); /* Firefox */
+            -o-transform: scale(1.2,1); /* Opera */
+            -webkit-transform: scale(1.2,1); /* Safari And Chrome */
+            transform: scale(1.2,1); /* Standard Property */
+        }
+
+        .ui-multiselect-trigger {
+            color: #5BB0B5 !important;
+            width: 32px;
+
+            .ui-multiselect-trigger-icon {
+                color: #5BB0B5 !important;
+                top: 0%;
+                width: 12px;
+            }
+
+            .pi-caret-down, .pi-caret-up, .fa-caret-down, .fa-caret-up {
+                -moz-transform: scale(2.4, 2.4); /* Firefox */
+                -o-transform: scale(2.4, 2.4); /* Opera */
+                -webkit-transform: scale(2.4, 2.4); /* Safari And Chrome */
+                transform: scale(2.4, 2.4); /* Standard Property */
+            }
+
+            .ui-clickable {
+                margin-top: 1.2em;
+            }
+        }
+    }
+
+    .col-fixer {
+        display: table-row;
+    }
+
+    .de-header, .de-paragraph, .multi-sel-row, .sm-row {
+        margin-bottom: 40px;
+    }
+
+    .vmi-wrapper {
+        line-height: 20px;
+    }
+
+    .filters-header {
+        .fa-info-circle:before {
+            color: #9DA3B3;
+        }
+
+        h3 {
+            margin-bottom: 0px;
+        }
+
+        i:hover {
+            cursor: pointer;
+        }
+    }
+
+    .bplot-col {
+        background: rgba(245, 245, 245, 0.5);
+    }
+
+    .empty-bplot-col {
+        background: rgba(245, 245, 245, 0.5);
+        height: 450px;
+    }
+}
+
+.btm-dialog {
+    .ui-dialog {
+        max-height: 90% !important;
+    }
+
+    .ui-dialog-titlebar {
+        padding-bottom: 73px !important;
+    }
+
+    .ui-dialog-content {
+        padding-top: 0% !important;
+        padding-bottom: 132px !important;
+        padding-left: 6% !important;
+        padding-right: 6% !important;
+    }
+
+    .first-bp-dia-row {
+        padding-bottom: 25px !important;
+    }
+
+    .content-vspacing {
+        padding-bottom: 215px;
+    }
+
+    .ui-dialog-titlebar-icon {
+
+        cursor: pointer;
+
+        :hover {
+            border-color: #c0c0c0;
+            background-color: #eeeeee;
+            color: #212121;
+        }
+    }
+}
+
+.btm-dialog2 {
+    .ui-dialog {
+        max-height: 90% !important;
+    }
+
+    .ui-dialog-titlebar {
+        padding-bottom: 73px !important;
+    }
+
+    .ui-dialog-content {
+        padding-top: 0% !important;
+        padding-bottom: 4.5% !important;
+    }
+
+    .ui-dialog-titlebar-icon {
+
+        cursor: pointer;
+
+        :hover {
+            border-color: #c0c0c0;
+            background-color: #eeeeee;
+            color: #212121;
+        }
+    }
+}
+
+.rna-seq-fplot {
+    .fa-info-circle:before {
+        color: #9DA3B3;
+    }
+
+    .rc-empty-plot-content {
+        height: 450px;
+        position: relative;
+        display: block;
+        background: rgba(245, 245, 245, 0.5);
+    }
+}
+
+.show-box-plot {
+    display: inline;
+}
+
+.hide-box-plot {
+    display: none;
+}
+
+.st-desc {
+    padding-top: 0px;
+}
+
+.no-side-padding {
+    background: rgba(245, 245, 245, 0);
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.fa-info-circle {
+  cursor: pointer
+}
+
+.no-median-data {
+    position: relative;
+    height: 350px;
+    background: rgba(245, 245, 245, 0.5);
+}

@@ -1,0 +1,67 @@
+@import "../../../assets/css/helpers/variables";
+@import "../../../assets/css/helpers/mixins";
+
+.nav-row {
+    height: 87px;
+    max-height: 87px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background: #FFFFFF;
+    z-index: 100000;
+
+    .ui-tabmenuitem {
+        background-color: white !important;
+        border: none;
+        height: 80px;
+
+        a {
+            padding: 0 1em !important;
+            height: 80px;
+
+            span {
+                display: block;
+                line-height: 80px;
+                height: 80px;
+            }
+        }
+    }
+
+    .ui-state-active {
+        a > span {
+            @include lato-font('bold');
+            background-repeat: repeat-x;
+            background-image: url('/assets/img/ActivePage.svg') !important;
+            background-position: 0 2.67em !important;
+        }
+    }
+
+    span {
+        @include lato-font('normal');
+        font-size: 20px;
+        color: #3C4A63;
+    }
+}
+
+.my-icon {
+    content: url('/assets/img/user_icon_32x32.jpg');
+}
+
+.logo-bg {
+    background: #FFFFFF;
+    width: 169px;
+    height: 80px;
+    cursor: pointer;
+
+    > img {
+        height: 80px;
+        width: 169px;
+        margin: auto;
+        display: block;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        cursor: pointer;
+    }
+}
