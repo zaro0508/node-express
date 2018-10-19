@@ -15,23 +15,19 @@ if (env === 'development') {
 }
 
 // Set the database url
-if (process.env.Docker) {
-    if (process.env.MONGODB_HOST && process.env.MONGODB_PORT) {
-        const results = awsParamStore.getParametersSync(
-            [
-                '/agora-develop/MongodbUsername', '/agora-develop/MongodbPassword'
-            ], { region: 'us-east-1' }
-        );
+if (process.env.MONGODB_HOST && process.env.MONGODB_PORT) {
+    const results = awsParamStore.getParametersSync(
+        [
+            '/agora-develop/MongodbUsername', '/agora-develop/MongodbPassword'
+        ], { region: 'us-east-1' }
+    );
 
-        database.url = 'mongodb://' + results.Parameters[0] + ':' + results.Parameters[1]
-            + '@' + process.env.MONGODB_HOST + ':' + process.env.MONGODB_PORT + '/agora'
-            + '?authSource=admin';
-    } else {
-        // Fallback to the service for now
-        // Service name here, not the localhost
-        database.url = 'mongodb://mongodb:27017/agora';
-    }
+    database.url = 'mongodb://' + results.Parameters[0] + ':' + results.Parameters[1]
+        + '@' + process.env.MONGODB_HOST + ':' + process.env.MONGODB_PORT + '/agora'
+        + '?authSource=admin';
 } else {
+    // Fallback to the service for now
+    // Service name here, not the localhost
     database.url = 'mongodb://localhost:27017/agora';
 }
 
