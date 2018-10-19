@@ -18,8 +18,8 @@ const ENV = (process.env.mode || process.env.NODE_ENV || process.env.ENV || 'dev
 const Docker = process.env.Docker || false;
 const HOST = process.env.HOST || 'localhost';
 
-const MONGODB_HOST = process.env.MONGODB_HOST || HOST;
-const MONGODB_PORT = process.env.MONGODB_PORT || 27017;
+const MONGODB_HOST = process.env.MONGODB_HOST || null;
+const MONGODB_PORT = process.env.MONGODB_PORT || null;
 
 const METADATA = Object.assign({}, buildUtils.DEFAULT_METADATA, {
     host: process.env.HOST || 'localhost',
