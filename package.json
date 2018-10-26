@@ -141,7 +141,9 @@
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.3.3",
     "ts-loader": "~3.5.0",
-    "zone.js": "^0.8.26",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
     "@angular-devkit/build-optimizer": "^0.6.8",
     "@angular/cli": "^6.2.2",
     "@angular/compiler-cli": "^6.1.9",
