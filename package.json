@@ -142,6 +142,7 @@
     "rxjs": "^6.3.3",
     "ts-loader": "~3.5.0",
     "zone.js": "^0.8.26"
+    "protractor": "^5.4.1",
   },
   "devDependencies": {
     "@angular-devkit/build-optimizer": "^0.6.8",
